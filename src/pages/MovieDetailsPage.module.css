@@ -1,0 +1,14 @@
+.wrapper {
+  width: 100%;
+}
+.mainInfo {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.infoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}

@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+.logo {
+  font-size: 24px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+.link {
+  color: cornflowerblue;
+  font-size: 20px;
+}
+.link.active {
+  color: thistle;
+}
