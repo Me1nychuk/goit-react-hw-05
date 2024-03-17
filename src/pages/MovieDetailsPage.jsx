@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useParams, useLocation } from "react-router-dom";
 import { BackLink } from "../components/BackLink/BackLink";
@@ -11,7 +11,7 @@ const MovieDetailsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/";
+  const backLinkHref = useRef(location.state?.from ?? "/");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,8 +35,9 @@ const MovieDetailsPage = () => {
     <Loader />
   ) : (
     <div className={css.wrapper}>
-      <BackLink to={backLinkHref}>
-        Back to {backLinkHref.pathname === "/movies" ? "Movies" : "Home"}
+      <BackLink to={backLinkHref.current}>
+        Back to{" "}
+        {backLinkHref.current.pathname === "/movies" ? "Movies" : "Home"}
       </BackLink>
       <div className={css.mainInfo}>
         <img
