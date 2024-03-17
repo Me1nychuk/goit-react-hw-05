@@ -23,7 +23,7 @@ const MovieReviews = () => {
     if (movieId) {
       fetchData();
     }
-  }, []);
+  }, [movieId]);
 
   return isLoading ? (
     <Loader />

@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import AppBar from "./AppBar/AppBar";
+import AppBar from "./AppBar/Navigation";
 import "./App.css";
 const HomePage = lazy(() => import("../pages/HomePage"));
 const MovieDetailsPage = lazy(() => import("../pages/MovieDetailsPage"));
